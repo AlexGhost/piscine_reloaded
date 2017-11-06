@@ -6,16 +6,11 @@
 /*   By: acourtin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 17:10:48 by acourtin          #+#    #+#             */
-/*   Updated: 2017/11/06 17:19:19 by acourtin         ###   ########.fr       */
+/*   Updated: 2017/11/06 17:28:13 by acourtin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_putchar(char c)
-{
-	printf("%c", c);
-}
+void	ft_putchar(char c);
 
 void	trier(int ac, char **av)
 {
