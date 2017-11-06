@@ -6,7 +6,7 @@
 /*   By: acourtin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 11:06:26 by acourtin          #+#    #+#             */
-/*   Updated: 2017/09/19 14:53:50 by acourtin         ###   ########.fr       */
+/*   Updated: 2017/11/06 18:47:43 by acourtin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 void	ft_display_file(char *filename)
 {
-	char c;
-	int fd;
-	int size;
+	char	c;
+	int		fd;
+	int		size;
 
 	c = '\0';
 	fd = open(filename, O_RDONLY | O_APPEND);
