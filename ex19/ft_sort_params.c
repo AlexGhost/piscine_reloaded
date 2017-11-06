@@ -5,55 +5,62 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acourtin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 17:10:48 by acourtin          #+#    #+#             */
-/*   Updated: 2017/11/06 17:28:13 by acourtin         ###   ########.fr       */
+/*   Created: 2017/09/05 17:45:59 by acourtin          #+#    #+#             */
+/*   Updated: 2017/09/13 18:18:06 by acourtin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	trier(int ac, char **av)
+int		ft_strcmp(char *s1, char *s2)
 {
-	int		i;
-	char	*temp;
+	int i;
 
-	i = 1;
-	if (ac > 2)
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		while (av[i] && av[i + 1])
-		{
-			if (av[i][0] > av[i + 1][0])
-			{
-				temp = av[i];
-				av[i] = av[i + 1];
-				av[i + 1] = temp;
-				i = 0;
-			}
-			i++;
-		}
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i += 1;
+	}
+	return (0);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i += 1;
 	}
 }
 
-int		main(int ac, char **av)
+int		main(int argc, char **argv)
 {
-	int i;
-	int j;
+	int		i;
+	char	*tempstr;
 
-	if (ac > 1)
+	i = 1;
+	while (i < argc - 1)
 	{
-		trier(ac, av);
-		i = 1;
-		while (av[i])
+		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 		{
-			j = 0;
-			while (av[i][j])
-			{
-				ft_putchar(av[i][j]);
-				j++;
-			}
-			ft_putchar('\n');
-			i++;
+			tempstr = argv[i];
+			argv[i] = argv[i + 1];
+			argv[i + 1] = tempstr;
+			i = 0;
 		}
+		i += 1;
+	}
+	i = 1;
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i += 1;
 	}
 	return (0);
 }
